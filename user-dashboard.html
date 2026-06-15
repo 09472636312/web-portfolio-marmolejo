@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="booking.html">
+        🏠 Book Room
+    </a>
+
+    <a href="my-bookings.html">
+        📅 My Bookings
+    </a>
+
+    <a href="notifications.html">
+        🔔 Notifications
+    </a>
+
+    <a href="payment.html">
+        💳 Make Payment
+    </a>
+
+    <a href="payment-history.html">
+        📜 Payment History
+    </a>
+
+    <a href="billing.html">
+        💰 My Billing
+    </a>
+
+    <a href="room-assignment.html">
+        🛏 My Room Assignment
+    </a>
+
+    <a href="check-in.html">
+        ✅ Check In
+    </a>
+
+    <a href="check-out.html">
+        🚪 Check Out
+    </a>
+
+    <a href="maintenance-request.html">
+        🔧 Maintenance Request
+    </a>
+
+    <a href="my-maintenance.html">
+        📋 My Requests
+    </a>
+
+    <a href="visitor-log.html">
+        👥 Register Visitor
+    </a>
+
+    <a href="my-visitors.html">
+        🚶 My Visitors
+    </a>
+
+    <a href="inventory.html">
+        📦 View Inventory
+    </a>
+
+    <a href="profile.html">
+        👤 My Profile
+    </a>
+
+    <a href="#" onclick="logout()">
+        🚪 Logout
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>User Dashboard</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+            <h2 id="bookingCount">0</h2>
+            <p>My Bookings</p>
+        </div>
+
+        <div class="card">
+            <h2 id="paymentCount">0</h2>
+            <p>Payments Made</p>
+        </div>
+
+        <div class="card">
+            <h2 id="visitorCount">0</h2>
+            <p>Visitors Registered</p>
+        </div>
+
+        <div class="card">
+            <h2 id="maintenanceCount">0</h2>
+            <p>Maintenance Requests</p>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2 id="welcomeText">
+            Welcome
+        </h2>
+
+        <p>
+            Manage your room bookings, payments,
+            billing records, maintenance requests,
+            visitors, and profile information from
+            this dashboard.
+        </p>
+
+    </div>
+
+    <br>
+
+    <div class="card">
+
+        <h2>Quick Actions</h2>
+
+        <br>
+
+        <a href="booking.html">
+            <button>
+                Book a Room
+            </button>
+        </a>
+
+        <a href="payment.html">
+            <button>
+                Make Payment
+            </button>
+        </a>
+
+        <a href="maintenance-request.html">
+            <button>
+                Request Maintenance
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+
+checkUser();
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+document.getElementById(
+"welcomeText"
+).innerText =
+"Welcome, " +
+currentUser.fullname;
+
+const bookings =
+JSON.parse(
+localStorage.getItem(
+"bookings"
+)
+) || [];
+
+const payments =
+JSON.parse(
+localStorage.getItem(
+"payments"
+)
+) || [];
+
+const visitors =
+JSON.parse(
+localStorage.getItem(
+"visitors"
+)
+) || [];
+
+const maintenance =
+JSON.parse(
+localStorage.getItem(
+"maintenanceRequests"
+)
+) || [];
+
+const myBookings =
+bookings.filter(
+booking =>
+booking.userId ==
+currentUser.id
+);
+
+const myPayments =
+payments.filter(
+payment =>
+payment.userId ==
+currentUser.id
+);
+
+const myVisitors =
+visitors.filter(
+visitor =>
+visitor.tenantId ==
+currentUser.id
+);
+
+const myMaintenance =
+maintenance.filter(
+request =>
+request.userId ==
+currentUser.id
+);
+
+document.getElementById(
+"bookingCount"
+).innerText =
+myBookings.length;
+
+document.getElementById(
+"paymentCount"
+).innerText =
+myPayments.length;
+
+document.getElementById(
+"visitorCount"
+).innerText =
+myVisitors.length;
+
+document.getElementById(
+"maintenanceCount"
+).innerText =
+myMaintenance.length;
+
+</script>
+
+</body>
+</html>

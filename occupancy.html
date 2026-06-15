@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Occupancy Report</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Boarding House</h2>
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+<div class="main-content">
+    <h1>Occupancy Report</h1>
+    <div class="analytics-container">
+        <div class="card">
+            <h2 id="totalRooms">
+                0
+            </h2>
+            <p>Total Rooms</p>
+        </div>
+        <div class="card">
+            <h2 id="occupiedRooms">
+                0
+            </h2>
+            <p>Occupied Rooms</p>
+        </div>
+        <div class="card">
+            <h2 id="vacantRooms">
+                0
+            </h2>
+            <p>Vacant Rooms</p>
+        </div>
+        <div class="card">
+            <h2 id="occupancyRate">
+                0%
+            </h2>
+            <p>Occupancy Rate</p>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Room Occupancy Details</h2>
+        <input
+        type="text"
+        id="searchRoom"
+        placeholder="🔍 Search Room">
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room Name</th>
+                    <th>Occupied</th>
+                </tr>
+            </thead>
+            <tbody id="occupancyTable">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/occupancy.js"></script>
+</body>
+</html>

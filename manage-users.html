@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Users</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>User Management</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalUsers">
+                0
+            </h2>
+
+            <p>Total Users</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalAdmins">
+                0
+            </h2>
+
+            <p>Total Admins</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalTenants">
+                0
+            </h2>
+
+            <p>Total Tenants</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Add New User</h2>
+
+        <form id="addUserForm">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+            type="text"
+            id="fullname"
+            placeholder="Enter Full Name"
+            required>
+
+            <label>
+                Username
+            </label>
+
+            <input
+            type="text"
+            id="username"
+            placeholder="Enter Username"
+            required>
+
+            <label>
+                Password
+            </label>
+
+            <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required>
+
+            <label>
+                Role
+            </label>
+
+            <select id="role">
+
+                <option value="user">
+                    User
+                </option>
+
+                <option value="admin">
+                    Admin
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Add User
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>User Records</h2>
+
+        <input
+        type="text"
+        id="searchUser"
+        placeholder="🔍 Search User">
+
+        <br><br>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="usersTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/users.js"></script>
+
+</body>
+
+</html>

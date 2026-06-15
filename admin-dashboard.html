@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="dashboard-analytics.html">
+        📊 Dashboard Analytics
+    </a>
+
+    <a href="manage-users.html">
+        👥 Manage Users
+    </a>
+
+    <a href="manage-rooms.html">
+        🏠 Manage Rooms
+    </a>
+
+    <a href="manage-bookings.html">
+        📅 Manage Bookings
+    </a>
+
+    <a href="manage-payments.html">
+        💳 Manage Payments
+    </a>
+
+    <a href="manage-billing.html">
+        💰 Manage Billing
+    </a>
+
+    <a href="manage-room-assignments.html">
+        🛏 Room Assignments
+    </a>
+
+    <a href="manage-maintenance.html">
+        🔧 Maintenance
+    </a>
+
+    <a href="manage-visitors.html">
+        🚶 Visitor Management
+    </a>
+
+    <a href="manage-checkins.html">
+        📋 Check-In Records
+    </a>
+
+    <a href="manage-inventory.html">
+        📦 Inventory
+    </a>
+
+    <a href="announcements.html">
+        📢 Announcements
+    </a>
+
+    <a href="occupancy.html">
+        📈 Occupancy Report
+    </a>
+
+    <a href="activity-logs.html">
+        📝 Activity Logs
+    </a>
+
+    <a href="reports.html">
+        📄 Reports
+    </a>
+
+    <a href="backup-data.html">
+        💾 Backup Data
+    </a>
+
+    <a href="restore-data.html">
+        ♻ Restore Data
+    </a>
+
+    <a href="#" onclick="logout()">
+        🚪 Logout
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+            <h2 id="totalUsers">0</h2>
+            <p>Total Users</p>
+        </div>
+
+        <div class="card">
+            <h2 id="totalRooms">0</h2>
+            <p>Total Rooms</p>
+        </div>
+
+        <div class="card">
+            <h2 id="totalBookings">0</h2>
+            <p>Total Bookings</p>
+        </div>
+
+        <div class="card">
+            <h2 id="totalRevenue">₱0</h2>
+            <p>Total Revenue</p>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Welcome Administrator</h2>
+
+        <p>
+            Manage tenants, rooms, bookings, payments,
+            maintenance requests, inventory, reports,
+            analytics, and other boarding house operations
+            from this dashboard.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+
+const users =
+JSON.parse(
+localStorage.getItem("users")
+) || [];
+
+const rooms =
+JSON.parse(
+localStorage.getItem("rooms")
+) || [];
+
+const bookings =
+JSON.parse(
+localStorage.getItem("bookings")
+) || [];
+
+const payments =
+JSON.parse(
+localStorage.getItem("payments")
+) || [];
+
+let revenue = 0;
+
+payments.forEach(payment => {
+
+    revenue += Number(
+        payment.amount || 0
+    );
+
+});
+
+document.getElementById(
+"totalUsers"
+).innerText =
+users.length;
+
+document.getElementById(
+"totalRooms"
+).innerText =
+rooms.length;
+
+document.getElementById(
+"totalBookings"
+).innerText =
+bookings.length;
+
+document.getElementById(
+"totalRevenue"
+).innerText =
+"₱" +
+revenue.toLocaleString();
+
+checkAdmin();
+
+</script>
+
+</body>
+</html>

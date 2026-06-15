@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Bookings</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Boarding House</h2>
+
+<a href="admin-dashboard.html">
+🏠 Dashboard
+</a>
+</div>
+
+<div class="main-content">
+
+<h1>Manage Bookings</h1>
+
+<div class="card">
+
+<input
+type="text"
+id="searchBooking"
+placeholder="Search Tenant Name..."
+onkeyup="displayBookings()">
+
+</div>
+
+<div class="card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Tenant</th>
+<th>Room</th>
+<th>Type</th>
+<th>Date</th>
+<th>Status</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="bookingTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="js/logger.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script>
+
+checkAdmin();
+
+let bookings =
+JSON.parse(
+localStorage.getItem(
+"bookings"
+)
+) || [];
+
+const bookingTable =
+document.getElementById(
+"bookingTable"
+);
+
+displayBookings();
+
+function displayBookings(){
+
+const keyword =
+document.getElementById(
+"searchBooking"
+).value.toLowerCase();
+
+bookingTable.innerHTML = "";
+
+bookings
+.filter(booking =>
+
+(booking.fullname || "")
+.toLowerCase()
+.includes(keyword)
+
+)
+.forEach((booking,index)=>{
+
+let badgeClass =
+"badge-warning";
+
+if(
+booking.status ===
+"Approved"
+){
+
+badgeClass =
+"badge-success";
+
+}
+
+if(
+booking.status ===
+"Rejected"
+){
+
+badgeClass =
+"badge-danger";
+
+}
+
+bookingTable.innerHTML += `
+
+<tr>
+
+<td>
+${booking.fullname}
+</td>
+
+<td>
+${booking.roomName}
+</td>
+
+<td>
+${booking.roomType}
+</td>
+
+<td>
+${booking.bookingDate}
+</td>
+
+<td>
+
+<span class="badge ${badgeClass}">
+${booking.status}
+</span>
+
+</td>
+
+<td>
+
+<button
+class="btn-success"
+onclick="approveBooking(${index})">
+Approve
+</button>
+
+<button
+class="btn-danger"
+onclick="rejectBooking(${index})">
+Reject
+</button>
+
+<button
+onclick="deleteBooking(${index})">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+function approveBooking(index){
+
+bookings[index].status =
+"Approved";
+
+localStorage.setItem(
+"bookings",
+JSON.stringify(bookings)
+);
+
+if(typeof addLog === "function"){
+
+addLog(
+"Administrator",
+"Approved Booking"
+);
+
+}
+
+displayBookings();
+
+}
+
+function rejectBooking(index){
+
+bookings[index].status =
+"Rejected";
+
+localStorage.setItem(
+"bookings",
+JSON.stringify(bookings)
+);
+
+if(typeof addLog === "function"){
+
+addLog(
+"Administrator",
+"Rejected Booking"
+);
+
+}
+
+displayBookings();
+
+}
+
+function deleteBooking(index){
+
+if(
+!confirm(
+"Delete this booking?"
+)
+){
+return;
+}
+
+bookings.splice(index,1);
+
+localStorage.setItem(
+"bookings",
+JSON.stringify(bookings)
+);
+
+displayBookings();
+
+}
+
+function logout(){
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+if(currentUser){
+
+if(typeof addLog === "function"){
+
+addLog(
+currentUser.fullname,
+"Logged Out"
+);
+
+}
+
+}
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+</body>
+</html>

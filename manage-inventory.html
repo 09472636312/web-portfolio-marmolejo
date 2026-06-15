@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inventory Management</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>Inventory Management</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalItems">
+                0
+            </h2>
+
+            <p>Total Inventory Items</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="availableItems">
+                0
+            </h2>
+
+            <p>Available Items</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="damagedItems">
+                0
+            </h2>
+
+            <p>Damaged Items</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="missingItems">
+                0
+            </h2>
+
+            <p>Missing Items</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Add Inventory Item</h2>
+
+        <form id="inventoryForm">
+
+            <label>
+                Item Name
+            </label>
+
+            <input
+            type="text"
+            id="itemName"
+            placeholder="Enter Item Name"
+            required>
+
+            <label>
+                Quantity
+            </label>
+
+            <input
+            type="number"
+            id="quantity"
+            placeholder="Enter Quantity"
+            required>
+
+            <label>
+                Status
+            </label>
+
+            <select id="status">
+
+                <option>
+                    Available
+                </option>
+
+                <option>
+                    In Use
+                </option>
+
+                <option>
+                    Damaged
+                </option>
+
+                <option>
+                    Missing
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Add Item
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Inventory Records</h2>
+
+        <input
+        type="text"
+        id="searchInventory"
+        placeholder="🔍 Search Item">
+
+        <br><br>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="inventoryTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/manage-inventory.js"></script>
+
+</body>
+
+</html>

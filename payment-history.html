@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment History</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>My Payment History</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalPayments">
+                0
+            </h2>
+
+            <p>Total Payments</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalPaid">
+                ₱0
+            </h2>
+
+            <p>Total Amount Paid</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Payment Records</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="paymentTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/payment-history.js"></script>
+
+</body>
+
+</html>

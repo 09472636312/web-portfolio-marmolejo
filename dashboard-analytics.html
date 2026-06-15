@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Analytics</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Boarding House Analytics</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalUsers">0</h2>
+
+            <p>Total Users</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalRooms">0</h2>
+
+            <p>Total Rooms</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalBookings">0</h2>
+
+            <p>Total Bookings</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalRevenue">₱0</h2>
+
+            <p>Total Revenue</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="occupancyRate">0%</h2>
+
+            <p>Occupancy Rate</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalVisitors">0</h2>
+
+            <p>Total Visitors</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalMaintenance">0</h2>
+
+            <p>Maintenance Requests</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="activeTenants">0</h2>
+
+            <p>Active Tenants</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>System Summary</h2>
+
+        <div id="summary">
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Quick Statistics</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Category</th>
+                    <th>Total</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Users</td>
+                    <td id="usersStat">0</td>
+                </tr>
+
+                <tr>
+                    <td>Rooms</td>
+                    <td id="roomsStat">0</td>
+                </tr>
+
+                <tr>
+                    <td>Bookings</td>
+                    <td id="bookingsStat">0</td>
+                </tr>
+
+                <tr>
+                    <td>Visitors</td>
+                    <td id="visitorsStat">0</td>
+                </tr>
+
+                <tr>
+                    <td>Maintenance</td>
+                    <td id="maintenanceStat">0</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/analytics.js"></script>
+
+</body>
+
+</html>

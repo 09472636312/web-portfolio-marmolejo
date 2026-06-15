@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>My Profile</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="profileName">
+                User
+            </h2>
+
+            <p>Account Holder</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="profileRole">
+                Tenant
+            </h2>
+
+            <p>Account Type</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Update Profile</h2>
+
+        <form id="profileForm">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+            type="text"
+            id="fullname"
+            placeholder="Enter Full Name"
+            required>
+
+            <label>
+                Username
+            </label>
+
+            <input
+            type="text"
+            id="username"
+            placeholder="Enter Username"
+            required>
+
+            <label>
+                New Password
+            </label>
+
+            <input
+            type="password"
+            id="password"
+            placeholder="Leave blank to keep current password">
+
+            <button type="submit">
+                Update Profile
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Account Information</h2>
+
+        <p>
+            Update your account information here.
+            Changes will be reflected immediately
+            after saving.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/profile.js"></script>
+
+<script>
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+if(currentUser){
+
+document.getElementById(
+"profileName"
+).innerText =
+currentUser.fullname || "User";
+
+document.getElementById(
+"profileRole"
+).innerText =
+currentUser.role || "Tenant";
+
+}
+
+</script>
+
+</body>
+
+</html>

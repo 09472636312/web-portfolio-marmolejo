@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Bookings</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>My Bookings</h1>
+
+    <div class="card">
+
+        <h2>Booking History</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Room</th>
+                    <th>Room Type</th>
+                    <th>Date</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="bookingTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+
+checkUser();
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+const bookings =
+JSON.parse(
+localStorage.getItem(
+"bookings"
+)
+) || [];
+
+const bookingTable =
+document.getElementById(
+"bookingTable"
+);
+
+const myBookings =
+bookings.filter(
+booking =>
+booking.userId ==
+currentUser.id
+);
+
+if(myBookings.length === 0){
+
+bookingTable.innerHTML = `
+
+<tr>
+
+<td colspan="4"
+style="text-align:center;">
+
+No bookings found.
+
+</td>
+
+</tr>
+
+`;
+
+}else{
+
+myBookings.forEach(booking => {
+
+let badgeClass =
+"badge-warning";
+
+if(
+booking.status ===
+"Approved"
+){
+
+badgeClass =
+"badge-success";
+
+}
+
+if(
+booking.status ===
+"Rejected"
+){
+
+badgeClass =
+"badge-danger";
+
+}
+
+bookingTable.innerHTML += `
+
+<tr>
+
+<td>
+${booking.roomName || booking.roomNumber || "N/A"}
+</td>
+
+<td>
+${booking.roomType || "Standard"}
+</td>
+
+<td>
+${booking.date || booking.bookingDate || "N/A"}
+</td>
+
+<td>
+
+<span class="badge ${badgeClass}">
+
+${booking.status || "Pending"}
+
+</span>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+function logout(){
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+if(currentUser){
+
+if(typeof addLog === "function"){
+
+addLog(
+currentUser.fullname,
+"Logged Out"
+);
+
+}
+
+}
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+</body>
+</html>

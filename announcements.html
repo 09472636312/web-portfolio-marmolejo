@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Announcements</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>Announcements</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalAnnouncements">
+                0
+            </h2>
+
+            <p>Total Announcements</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="activeAnnouncements">
+                0
+            </h2>
+
+            <p>Published Posts</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Create Announcement</h2>
+
+        <form id="announcementForm">
+
+            <label>
+                Announcement Title
+            </label>
+
+            <input
+            type="text"
+            id="title"
+            placeholder="Enter Announcement Title"
+            required>
+
+            <label>
+                Announcement Message
+            </label>
+
+            <textarea
+            id="message"
+            rows="6"
+            placeholder="Enter Announcement Message"
+            required>
+            </textarea>
+
+            <button type="submit">
+                📢 Post Announcement
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Published Announcements</h2>
+
+        <input
+        type="text"
+        id="searchAnnouncement"
+        placeholder="🔍 Search Announcement">
+
+        <br><br>
+
+        <div id="announcementList">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/announcements.js"></script>
+
+</body>
+
+</html>

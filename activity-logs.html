@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Activity Logs</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>System Activity Logs</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalLogs">0</h2>
+
+            <p>Total Activities</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="todayLogs">0</h2>
+
+            <p>Today's Activities</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <input
+        type="text"
+        id="searchLogs"
+        placeholder="Search User or Action..."
+        onkeyup="filterLogs()">
+
+    </div>
+
+    <div class="card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date & Time</th>
+                    <th>User</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="logsTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/activity-logs.js"></script>
+
+<script>
+
+checkAdmin();
+
+function logout(){
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+if(currentUser){
+
+if(typeof addLog === "function"){
+
+addLog(
+currentUser.fullname,
+"Logged Out"
+);
+
+}
+
+}
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+</body>
+</html>

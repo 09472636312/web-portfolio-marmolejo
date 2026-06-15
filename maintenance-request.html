@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maintenance Request</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Maintenance Request</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2>🔧</h2>
+
+            <p>Report Maintenance Issues</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>24/7</h2>
+
+            <p>Support Available</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Submit Maintenance Request</h2>
+
+        <form id="maintenanceForm">
+
+            <label>
+                Issue Type
+            </label>
+
+            <select id="issueType" required>
+
+                <option value="">
+                    Select Issue Type
+                </option>
+
+                <option>
+                    Electrical
+                </option>
+
+                <option>
+                    Plumbing
+                </option>
+
+                <option>
+                    Internet
+                </option>
+
+                <option>
+                    Furniture
+                </option>
+
+                <option>
+                    Cleaning
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+            id="description"
+            rows="6"
+            placeholder="Describe the issue in detail..."
+            required>
+            </textarea>
+
+            <button type="submit">
+                Submit Request
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Maintenance Guidelines</h2>
+
+        <ul>
+
+            <li>
+                Provide a detailed description of the issue.
+            </li>
+
+            <li>
+                Include the affected area or room.
+            </li>
+
+            <li>
+                Emergency concerns should be reported immediately.
+            </li>
+
+            <li>
+                Requests are reviewed by the administrator.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/maintenance.js"></script>
+
+</body>
+
+</html>

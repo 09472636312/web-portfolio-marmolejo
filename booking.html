@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Room</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Room Booking</h1>
+
+    <div class="card">
+
+        <h2>Book a Room</h2>
+
+        <form id="bookingForm">
+
+            <label>
+                Select Room
+            </label>
+
+            <select
+            id="roomSelect"
+            required>
+
+                <option value="">
+                    Select Room
+                </option>
+
+            </select>
+
+            <label>
+                Check-In Date
+            </label>
+
+            <input
+            type="date"
+            id="bookingDate"
+            required>
+
+            <label>
+                Number of Months
+            </label>
+
+            <input
+            type="number"
+            id="months"
+            min="1"
+            value="1"
+            required>
+
+            <label>
+                Additional Notes
+            </label>
+
+            <textarea
+            id="notes"
+            rows="4"
+            placeholder="Optional notes">
+            </textarea>
+
+            <button type="submit">
+                Submit Booking
+            </button>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <div class="card">
+
+        <h2>Available Rooms</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Room</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="roomsTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+
+checkUser();
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+const rooms =
+JSON.parse(
+localStorage.getItem(
+"rooms"
+)
+) || [];
+
+const roomSelect =
+document.getElementById(
+"roomSelect"
+);
+
+const roomsTable =
+document.getElementById(
+"roomsTable"
+);
+
+rooms.forEach(room => {
+
+roomSelect.innerHTML += `
+
+<option value="${room.id}">
+
+${room.roomName}
+(${room.roomType})
+
+</option>
+
+`;
+
+let badge =
+
+room.status ===
+"Available"
+
+?
+
+'<span class="badge badge-success">Available</span>'
+
+:
+
+'<span class="badge badge-danger">Occupied</span>';
+
+roomsTable.innerHTML += `
+
+<tr>
+
+<td>
+${room.roomName}
+</td>
+
+<td>
+${room.roomType}
+</td>
+
+<td>
+₱${room.price}
+</td>
+
+<td>
+${badge}
+</td>
+
+</tr>
+
+`;
+
+});
+
+const bookingForm =
+document.getElementById(
+"bookingForm"
+);
+
+bookingForm.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+let bookings =
+JSON.parse(
+localStorage.getItem(
+"bookings"
+)
+) || [];
+
+const roomId =
+document.getElementById(
+"roomSelect"
+).value;
+
+const selectedRoom =
+rooms.find(
+room =>
+room.id == roomId
+);
+
+const booking = {
+
+id: Date.now(),
+
+userId:
+currentUser.id,
+
+fullname:
+currentUser.fullname,
+
+roomId:
+selectedRoom.id,
+
+roomName:
+selectedRoom.roomName,
+
+roomType:
+selectedRoom.roomType,
+
+price:
+selectedRoom.price,
+
+bookingDate:
+document.getElementById(
+"bookingDate"
+).value,
+
+months:
+document.getElementById(
+"months"
+).value,
+
+notes:
+document.getElementById(
+"notes"
+).value,
+
+status:
+"Pending",
+
+createdAt:
+new Date()
+.toLocaleString()
+
+};
+
+bookings.push(
+booking
+);
+
+localStorage.setItem(
+"bookings",
+JSON.stringify(
+bookings
+)
+);
+
+if(typeof addLog === "function"){
+
+addLog(
+currentUser.fullname,
+"Booked Room: " +
+selectedRoom.roomName
+);
+
+}
+
+alert(
+"Booking Submitted Successfully"
+);
+
+bookingForm.reset();
+
+});
+
+function logout(){
+
+const currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+if(currentUser){
+
+if(typeof addLog === "function"){
+
+addLog(
+currentUser.fullname,
+"Logged Out"
+);
+
+}
+
+}
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+</body>
+</html>

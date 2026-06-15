@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Visitor Registration</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Visitor Registration</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalVisitors">
+                0
+            </h2>
+
+            <p>Total Registered Visitors</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="upcomingVisits">
+                0
+            </h2>
+
+            <p>Upcoming Visits</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Register New Visitor</h2>
+
+        <form id="visitorForm">
+
+            <label>
+                Visitor Name
+            </label>
+
+            <input
+            type="text"
+            id="visitorName"
+            placeholder="Enter Visitor Name"
+            required>
+
+            <label>
+                Relationship
+            </label>
+
+            <input
+            type="text"
+            id="relationship"
+            placeholder="Friend, Parent, Sibling, Relative, etc."
+            required>
+
+            <label>
+                Visit Date
+            </label>
+
+            <input
+            type="date"
+            id="visitDate"
+            required>
+
+            <button type="submit">
+                🚶 Register Visitor
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Visitor Guidelines</h2>
+
+        <ul>
+
+            <li>
+                Visitors must be registered before arrival.
+            </li>
+
+            <li>
+                Visitors should present a valid ID upon entry.
+            </li>
+
+            <li>
+                Visiting hours must follow boarding house policies.
+            </li>
+
+            <li>
+                Management reserves the right to deny unauthorized visitors.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/visitor.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Maintenance</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Manage Maintenance Requests</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalRequests">
+                0
+            </h2>
+
+            <p>Total Requests</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="pendingRequests">
+                0
+            </h2>
+
+            <p>Pending Requests</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="completedRequests">
+                0
+            </h2>
+
+            <p>Completed Requests</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Maintenance Records</h2>
+
+        <input
+        type="text"
+        id="searchMaintenance"
+        placeholder="🔍 Search Tenant or Issue">
+
+        <br><br>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Tenant</th>
+                    <th>Date</th>
+                    <th>Issue</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="maintenanceTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/manage-maintenance.js"></script>
+
+</body>
+
+</html>

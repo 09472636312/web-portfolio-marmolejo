@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Monitoring</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Boarding House</h2>
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+<div class="main-content">
+    <h1>Visitor Monitoring</h1>
+    <div class="analytics-container">
+        <div class="card">
+            <h2 id="totalVisitors">
+                0
+            </h2>
+            <p>Total Visitor Requests</p>
+        </div>
+        <div class="card">
+            <h2 id="approvedVisitors">
+                0
+            </h2>
+            <p>Approved Visitors</p>
+        </div>
+        <div class="card">
+            <h2 id="pendingVisitors">
+                0
+            </h2>
+           <p>Pending Requests</p>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Visitor Records</h2>
+        <input
+        type="text"
+        id="searchVisitor"
+        placeholder="🔍 Search Tenant or Visitor">
+        <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tenant</th>
+                    <th>Visitor</th>
+                    <th>Relationship</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="visitorTable">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/manage-visitors.js"></script>
+</body>
+</html>

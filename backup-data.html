@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Backup</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Boarding House</h2>
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+<div class="main-content">
+    <h1>System Backup</h1>
+    <div class="analytics-container">
+        <div class="card">
+            <h2>
+                💾
+            </h2>
+            <p>Create Secure Backup</p>
+        </div>
+        <div class="card">
+            <h2>
+                📁
+            </h2>
+            <p>Export System Data</p>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Download Backup</h2>
+        <p>
+            Create a complete backup of your Boarding House Management System data. This includes users, rooms, bookings, payments, inventory, maintenance requests, visitors, and other stored records.
+        </p>
+        <button onclick="backupData()">
+            💾 Download Backup File
+        </button>
+    </div>
+    <div class="card">
+        <h2>Backup Information</h2>
+        <ul>
+            <li>
+                Backup files are saved in JSON format.
+            </li>
+            <li>
+                Store backups in a secure location.
+            </li>
+            <li>
+                Create regular backups before major updates.
+            </li>
+            <li>
+                Backup files can be restored using the Restore Data module.
+            </li>
+            <li>
+                All LocalStorage records will be included in the backup.
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/backup.js"></script>
+</body>
+</html>

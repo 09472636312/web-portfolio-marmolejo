@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Check-In / Check-Out Records</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Boarding House</h2>
+
+    <a href="admin-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Check-In / Check-Out Records</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalCheckins">
+                0
+            </h2>
+
+            <p>Total Check-Ins</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="totalCheckouts">
+                0
+            </h2>
+
+            <p>Total Check-Outs</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="activeTenants">
+                0
+            </h2>
+
+            <p>Currently Checked-In</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Check-In Records</h2>
+
+        <input
+        type="text"
+        id="searchCheckin"
+        placeholder="🔍 Search Tenant">
+
+        <br><br>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Check In</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="checkinTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Check-Out Records</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Check Out</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="checkoutTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/manage-checkins.js"></script>
+
+</body>
+
+</html>

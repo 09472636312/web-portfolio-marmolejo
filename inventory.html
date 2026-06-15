@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Room Inventory</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>Boarding House Inventory</h1>
+
+    <div class="analytics-container">
+
+        <div class="card">
+
+            <h2 id="totalItems">0</h2>
+            <p>Total Items</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="availableItems">0</h2>
+            <p>Available Items</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="damagedItems">0</h2>
+            <p>Damaged Items</p>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Inventory List</h2>
+
+        <table border="1" width="100%">
+
+            <thead>
+
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="inventoryTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/inventory.js"></script>
+
+</body>
+
+</html>

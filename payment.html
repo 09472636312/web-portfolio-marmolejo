@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Make Payment</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Tenant Portal</h2>
+
+    <a href="user-dashboard.html">
+        🏠 Dashboard
+    </a>
+</div>
+
+<div class="main-content">
+
+    <h1>Rent Payment</h1>
+
+    <div class="card">
+
+        <h2>Payment Information</h2>
+
+        <form id="paymentForm">
+
+            <label>
+                Amount
+            </label>
+
+            <input
+            type="number"
+            id="amount"
+            placeholder="Enter Amount"
+            required>
+
+            <label>
+                Payment Method
+            </label>
+
+            <select id="method">
+
+                <option value="Cash">
+                    Cash
+                </option>
+
+                <option value="GCash">
+                    GCash
+                </option>
+
+                <option value="Maya">
+                    Maya
+                </option>
+
+                <option value="Bank Transfer">
+                    Bank Transfer
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Pay Now
+            </button>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <div class="card">
+
+        <h2>Accepted Payment Methods</h2>
+
+        <p>💵 Cash Payment</p>
+        <p>📱 GCash</p>
+        <p>💳 Maya</p>
+        <p>🏦 Bank Transfer</p>
+
+    </div>
+
+</div>
+
+<script src="js/logger.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/payment.js"></script>
+
+</body>
+
+</html>

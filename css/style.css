@@ -1,0 +1,438 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#333;
+min-height:100vh;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1{
+font-size:2rem;
+margin-bottom:20px;
+color:#2c3e50;
+}
+
+h2{
+margin-bottom:15px;
+color:#34495e;
+}
+
+h3{
+margin-bottom:10px;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+text-decoration:none;
+color:#3498db;
+font-weight:600;
+transition:.3s;
+}
+
+a:hover{
+color:#21618c;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar{
+background:#2c3e50;
+padding:15px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar h2{
+color:white;
+margin:0;
+}
+
+.navbar a{
+color:white;
+margin-left:15px;
+}
+
+/* =========================
+   SIDEBAR (UPDATED MODERN STYLE)
+========================= */
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:220px;
+height:100%;
+background:linear-gradient(180deg,#1f2a38,#2c3e50);
+padding-top:20px;
+overflow-y:auto;
+box-shadow:2px 0 12px rgba(0,0,0,.2);
+}
+
+.sidebar h2{
+color:white;
+text-align:center;
+margin-bottom:25px;
+font-size:18px;
+letter-spacing:1px;
+}
+
+.sidebar a{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+margin:5px 10px;
+color:white;
+border-radius:8px;
+font-size:14px;
+transition:.25s ease;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,.08);
+transform:translateX(6px);
+}
+
+.sidebar a.active{
+background:#3498db;
+color:white;
+}
+
+.main-content{
+margin-left:220px;
+padding:25px;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.analytics-container{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:
+0 4px 10px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h2{
+font-size:2rem;
+margin-bottom:10px;
+color:#3498db;
+}
+
+.card p{
+font-size:.95rem;
+color:#666;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+form{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:
+0 3px 8px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:15px;
+outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#3498db;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+background:#3498db;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+margin-right:10px;
+margin-bottom:10px;
+}
+
+button:hover{
+background:#21618c;
+}
+
+.btn-danger{
+background:#e74c3c;
+}
+
+.btn-danger:hover{
+background:#c0392b;
+}
+
+.btn-success{
+background:#27ae60;
+}
+
+.btn-success:hover{
+background:#1e8449;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+margin-top:20px;
+box-shadow:
+0 3px 8px rgba(0,0,0,.08);
+border-radius:10px;
+overflow:hidden;
+}
+
+table th{
+background:#3498db;
+color:white;
+padding:15px;
+text-align:left;
+}
+
+table td{
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+table tr:hover{
+background:#f8f9fa;
+}
+
+/* =========================
+   ALERT BOX
+========================= */
+
+.alert{
+padding:15px;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+.alert-success{
+background:#d4edda;
+color:#155724;
+}
+
+.alert-danger{
+background:#f8d7da;
+color:#721c24;
+}
+
+.alert-warning{
+background:#fff3cd;
+color:#856404;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.stat-box{
+background:white;
+padding:25px;
+border-radius:15px;
+text-align:center;
+box-shadow:
+0 3px 8px rgba(0,0,0,.08);
+}
+
+.stat-box h2{
+font-size:2.2rem;
+color:#3498db;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:
+0 3px 8px rgba(0,0,0,.08);
+max-width:500px;
+}
+
+/* =========================
+   LOGIN / REGISTER
+========================= */
+
+.auth-container{
+max-width:450px;
+margin:60px auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:
+0 4px 12px rgba(0,0,0,.1);
+}
+
+.auth-container h1{
+text-align:center;
+margin-bottom:25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+text-align:center;
+padding:20px;
+margin-top:30px;
+color:#777;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge{
+padding:6px 12px;
+border-radius:20px;
+font-size:.85rem;
+font-weight:bold;
+}
+
+.badge-success{
+background:#d4edda;
+color:#155724;
+}
+
+.badge-warning{
+background:#fff3cd;
+color:#856404;
+}
+
+.badge-danger{
+background:#f8d7da;
+color:#721c24;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main-content{
+margin-left:0;
+}
+
+.analytics-container{
+grid-template-columns:1fr;
+}
+
+table{
+display:block;
+overflow-x:auto;
+}
+
+}
+
+/* =========================
+   SCROLLBAR (SIDEBAR)
+========================= */
+
+.sidebar::-webkit-scrollbar{
+width:4px;
+}
+
+.sidebar::-webkit-scrollbar-track{
+background:transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(#3498db,#2ecc71);
+border-radius:10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover{
+background:linear-gradient(#2980b9,#27ae60);
+}
