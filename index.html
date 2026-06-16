@@ -1,70 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aida's Boarding House</title>
-
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPU BSIT Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
 
 <header>
-
-<h1>Aida's Boarding House</h1>
-
-<nav>
-
-<a href="index.html">Home</a>
-<a href="login.html">Login</a>
-<a href="register.html">Register</a>
-
-</nav>
-
+  <nav class="navbar">
+    <div class="logo">CPU <span>Portfolio</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">OJT</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">&#9776;</div>
+  </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <div class="hero-img">
+    <img src="images/pic1.jpeg" alt="SaveWins Flutter App">
+  </div>
+    <h1>Hi! I'm Alfredo Marmolejo</h1>
+    <h3>A Gradute of Bachelor of Science in Information Technology</h3>
+    <p>At Central Philippine University a student passionate about web and system development.</p>
+<div class="hero-buttons">
+  <a href="#projects" class="btn primary">View Projects</a>
+  <a href="resume.pdf" class="btn secondary" download>Download Resume</a>
+  <a href="#contact" class="btn primary">Contact Me </a>
+</div>
 
-<h2>Affordable and Comfortable Rooms</h2>
-
-<p>
-Book your room online today.
-</p>
-
-<a href="register.html" class="btn">
-Book Now
-</a>
-
+  
 </section>
 
-<section>
+<!-- ABOUT ME -->
+<section id="about" class="panel fade-in">
+  <h2 class="section-title">About Me</h2>
+  <p>A technology enthusiast and IT professional trained at Central Philippine University, I completed my Bachelor of Science in Information Technology (BSIT) school year 2025–2026 for four years of intensive study and practical experience. During my time at CPU, I gained comprehensive knowledge in computer programming languages, database management using SQL Server, system design, networking configuration, hardware maintenance, and mobile and web application development (including Flutter and Dart).</p>
+  <p>Born and raised in Maasin, Iloilo, I have always been passionate about technology and its ability to solve real world problems. My primary focus is on database management and data driven solutions, while also having experience in developing web and mobile applications and creating UI/UX designs, including basic and advanced prototypes in Figma that emphasize usability and functionality.</p>
+  <p>Beyond my technical expertise, I am a dedicated and adaptable professional with strong problem solving skills and a creative mindset, making me a valuable contributor to any IT team or project.I am a dedicated, adaptable, and results driven professional with strong analytical skills, a creative mindset, and a proven ability to translate complex technical requirements into practical, user centered solutions. I thrive in collaborative environments, am quick to learn emerging technologies, and aim to contribute meaningfully to IT projects that deliver measurable impact.</p>
+  <p>During my On the Job Training at Iloilo City Hall, I contributed to the Data Assessment and System Management Office, gaining hands on experience in data management, system analysis, and UI/UX design, while collaborating with cross functional teams to deliver effective IT solutions. I have also designed user friendly web and mobile interfaces, created functional and visually engaging prototypes in Figma, and implemented solutions that enhance efficiency and usability.</p>
+</section>
+<!-- EDUCATION -->
+<section id="education" class="panel fade-in bg-light">
+  <h2 class="section-title">Educational Background</h2>
 
-<h2>Available Rooms</h2>
+  <div class="projects-grid">
+    <!-- School 1 -->
+    <article class="project-card neon-hover">
+      <img src="images/mensa.jpg" alt="St. James Preschool Logo">
+      <h3>St. James the Great Academy Mensa Domini Sisters Inc.</h3>
+      <h4>SY 2008-2010</h4>
+      <p>Maasin, Iloilo   Developed foundational skills in language, numeracy, social interaction, creativity, and physical coordination through play based learning.</p>
+    </article>
 
-<div class="room-container">
+    <!-- School 2 -->
+    <article class="project-card neon-hover">
+      <img src="images/mces.jpg" alt="Maasin Elementary School Logo">
+      <h3>Maasin Central Elementary School</h3>
+      <h4>SY 2010-2016</h4>
+      <p>Maasin, Iloilo    Built strong academic foundations in reading, writing, math, and science while developing teamwork, discipline, and participation in school activities.</p>
+    </article>
 
-<div class="room-card">
-<h3>Single Room</h3>
-<p>₱2,500 / Month</p>
-</div>
+    <!-- School 3 -->
+    <article class="project-card neon-hover">
+      <img src="images/csj.png" alt="Colegio de San Jose High School Logo">
+      <h3>Colegio de San Jose  High School</h3>
+      <h4>SY 2016-2020</h4>
+      <p>Jaro, Iloilo City Expanded academic knowledge in core subjects, strengthened critical thinking and problem solving skills, and actively participated in extracurricular activities and school events.</p>
+    </article>
 
-<div class="room-card">
-<h3>Double Room</h3>
-<p>₱4,000 / Month</p>
-</div>
+    <!-- School 4 -->
+    <article class="project-card neon-hover">
+      <img src="images/csj.png" alt="Colegio de San Jose Senior High Logo">
+      <h3>Colegio de San Jose  Senior High</h3>
+      <h4>SY 2020-2022</h4>
+      <p>Jaro, Iloilo City  Focused on advanced STEM subjects, honed analytical and technical skills, and engaged in projects and activities that strengthened problem solving and scientific thinking.</p>
+    </article>
 
-<div class="room-card">
-<h3>Bed Spacer</h3>
-<p>₱1,500 / Month</p>
-</div>
-
-</div>
-
+    <!-- University -->
+    <article class="project-card neon-hover">
+      <img src="images/cpu1.jpg" alt="Central Philippine University Logo">
+      <h3>Central Philippine University - BSIT</h3>
+      <h4>SY 2022-2026</h4>
+      <p>Jaro, Iloilo City  Pursued a Bachelor of Science in Information Technology, specializing in databases, web and mobile development, and gaining practical skills in programming, system design, and cybersecurity.</p>
+    </article>
+  </div>
 </section>
 
-<footer>
-<p>© 2026 Aida's Boarding House</p>
-</footer>
 
+<!-- TECHNICAL SKILLS -->
+<section id="skills" class="panel fade-in bg-light">
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="skills-grid">
+
+    <!-- Skill 1 -->
+    <div class="skill-card neon-hover">
+      <img src="images/htmllogo.png" alt="HTML, CSS, JavaScript" class="skill-img">
+      <h4>HTML, CSS, JavaScript</h4>
+      <p>Front-end web development and responsive user interface design.</p>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="skill-card neon-hover">
+      <img src="images/php.png" alt="PHP, MySQL" class="skill-img">
+      <h4>PHP, MySQL</h4>
+      <p>Back-end development, database management, and server-side scripting.</p>
+    </div>
+
+    <!-- Skill 3 -->
+    <div class="skill-card neon-hover">
+      <img src="images/vs.png" alt="Git, VS Code, XAMPP" class="skill-img">
+      <h4>Git, VS Code, XAMPP</h4>
+      <p>Version control, development tools, and local server environment setup.</p>
+    </div>
+
+    <!-- Skill 4 -->
+    <div class="skill-card neon-hover">
+      <img src="images/networking.jpg" alt="Networking" class="skill-img">
+      <h4>Networking</h4>
+      <p>Network configuration, IP addressing, subnetting, routing, switching, and basic network troubleshooting.</p>
+    </div>
+
+    <!-- Skill 5 -->
+    <div class="skill-card neon-hover">
+      <img src="images/hardware.jfif" alt="Computer Hardware Repair" class="skill-img">
+      <h4>Computer and Printer Repair & Maintenance</h4>
+      <p>Computer assembly, hardware diagnostics, power supply replacement, preventive maintenance, and printer troubleshooting and repair.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- PROJECTS -->
+<section id="projects" class="panel fade-in">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <article class="project-card neon-hover">
+      <img src="images/savewins logo.png" alt="SaveWins Flutter App">
+      <h3>SaveWins</h3>
+      <p>
+        SaveWins is a Flutter based mobile budget tracker using envelope budgeting,
+        Firebase authentication, cloud storage, receipt uploads, analytics,
+        interactive charts, and goal tracking.
+      </p>
+      <div class="card-actions">
+        <a href="https://savewins.vercel.app/" class="link" target="_blank">Test It Yourself</a>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project-card neon-hover">
+      <img src="images/bh.jpg" alt="SaveWins Flutter App">
+      <h3>Boarding House Website</h3>
+      <p>
+        A responsive web system with tenant management, payment tracking,
+        announcements, and admin dashboard.
+      </p>
+      <div class="card-actions">
+        <a href="https://aidabhmsys-three.vercel.app" class="link"target="_blank">Test It Yourself</a>
+      </div>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project-card neon-hover">
+      <img src="images/aaa.png" alt="SaveWins Flutter App">
+      <h3>Tripple A Egg </h3>
+      <p>Looking for a reliable, top-tier egg supplier in Iloilo? <strong>Triple A Egg Supply</strong> in Maasin is your leading distributor of fresh, high-quality eggs. We connect local farms directly to you, ensuring every crate meets the highest standards of freshness, size, and nutritional value.</p>
+      <div class="card-actions">
+        <a href="https://triple-a-egg.vercel.app" class="link" target="_blank">Test It Yourself</a>
+      </div>
+    </article>
+    <!-- Project 4 -->
+    <article class="project-card neon-hover">
+      <img src="images/mm.jpg" alt="SaveWins Flutter App">
+      <h3>MARMOLEJO'S BUILDERS RENTAL WEB PAGE</h3>
+      <p>
+        Developed a fully functional truck and heavy equipment rental web system using vibe coding with Google AI, enabling customers to browse available equipment, view rental rates, select rental dates, and submit booking requests. The system also features an admin panel for managing equipment availability, reviewing bookings, and approving rental requests efficiently. 
+      </p>
+      <div class="card-actions">
+        <a href="https://ai.studio/apps/drive/1wQJFPG2bIoQfbblsOSO-tmkIi_qDHmzx?fullscreenApplet=true" class="link" target="_blank">Test It Yourself</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- OJT / EXPERIENCE -->
+<section id="experience" class="panel fade-in bg-light">
+  <h2 class="section-title">On-the-Job Training</h2>
+
+  <article class="project-card neon-hover">
+    <h3>System Analyst (On-the-Job Training)</h3>
+    <p><strong>Project:</strong> Technical Support Service Request System (TSSRS)</p>
+    <p><strong>Office/Department:</strong> Data Assessment and System Management Office (DASMO), ICT Department</p>
+    <p><strong>Organization:</strong> Iloilo City Hall</p>
+    <p><strong>Duration:</strong> January 2026 – April 2026</p>
+
+    <div class="card-section">
+      <p><strong>Key Responsibilities:</strong></p>
+      <ul>
+        <li>Analyzed business and technical requirements for the Technical Support Service Request System (TSSRS).</li>
+        <li>Collaborated with stakeholders to identify system needs and process improvements.</li>
+        <li>Prepared system documentation, workflow diagrams, and technical reports.</li>
+        <li>Assisted in UI/UX design and system development activities.</li>
+        <li>Conducted system testing, troubleshooting, and quality assurance.</li>
+        <li>Provided technical support for hardware, software, and network-related concerns.</li>
+        <li>Participated in data assessment, management, and system implementation tasks.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" class="panel fade-in bg-light">
+  <h2 class="section-title">Certificates</h2>
+
+  <div class="Certifications-grid">
+    <!-- Certificate 1 -->
+    <div class="Certifications-card neon-hover">
+      <img src="images/cisco1.png" alt="CCNA 1 Certificate">
+      <h4>CCNA 1</h4>
+      <p>CCNA: Introduction to Networks</p>
+      <a href="https://www.credly.com/badges/17c47a9b-304f-46b6-adec-716fa3df69e6" class="link" target="_blank">View badge </a>
+    </div>
+
+    <!-- Certificate 2 -->
+    <div class="Certifications-card neon-hover">
+      <img src="images/cisco2.png" alt="CCNA 2 Certificate">
+      <h4>CCNA 2</h4>
+      <p>CCNA: Switching Routing and wireless Essentials</p>
+      <a href="https://www.credly.com/badges/1d34a61e-fdf9-4b13-8bf8-12df00b041f7" class="link" target="_blank">View badge </a>
+    </div>
+
+    <!-- Certificate 3 -->
+    <div class="Certifications-card neon-hover">
+      <img src="images/ciso 3.png" alt="CCNA 3 Certificate">
+      <h4>CCNA 3</h4>
+      <p>CCNA: Enterprise Networking, Security, and Automation</p>
+      <a href="https://www.credly.com/badges/2e1ef643-7276-4c32-9515-736cb2816a23" class="link" target="_blank">View badge </a>
+    </div>
+
+    <!-- Certificate 4 -->
+    <div class="Certifications-card neon-hover">
+      <img src="images/cybersecurity.png" alt="Cyber Security Certificate">
+      <h4>Cyber Security</h4>
+      <p>Introduction to Cybersecurity</p>
+      <a href="https://www.credly.com/badges/9f037ac9-181c-4113-adb4-2585b2b652cf" class="link" target="_blank">View badge </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- RESUME -->
+<section id="resume" class="panel fade-in">
+  <h2 class="section-title">Resume</h2>
+
+  <iframe 
+    src="resume.pdf"
+    width="100%"
+    height="600px"
+    style="border: none; border-radius: 12px;">
+  </iframe>
+
+  <br><br>
+  <!-- replace for resume -->
+  <a href="resume.pdf" class="btn primary" download>Download Resume</a>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="panel fade-in bg-dark">
+  <h2 class="section-title">Contact</h2>
+
+  <div class="contact-info">
+    <p><strong>Email:</strong> alfredomarmolejomdt0011@gmail.com</p>
+    <p><strong>Phone:</strong> +63 947 263 6312</p>
+    <p><strong>Location:</strong> Iloilo, Philippines</p>
+
+    <div class="contact-buttons">
+      <a href="https://web.facebook.com/alfredo.marmolejo.564/?_rdc=2&_rdr#" target="_blank" class="btn secondary">Facebook</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=alfredomarmolejomdt0011@gmail.com&su=Hello%20Alfredo" target="_blank" class="btn secondary">Email Me</a>
+      <a href="https://github.com/09472636312?tab=repositories" target="_blank" class="btn secondary">GitHub</a>
+      <a href="https://www.linkedin.com/in/alfredo-marmolejo-08490b395/" target="_blank" class="btn secondary">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</div></section>
 </body>
 </html>
